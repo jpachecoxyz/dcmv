@@ -1,0 +1,33 @@
+#+TITLE: Safety Vision System for Molding Machines (DCMV)
+#+AUTHOR: Javier Pacheco
+#+EMAIL: javier@jpacheco.xyz
+#+OPTIONS: toc:nil
+
+* Project Overview
+
+This project implements a *safety vision system* designed to protect operators working with or around industrial molding machines. The system continuously monitors the machine area and uses intelligent detection to identify the presence of people inside dangerous zones.
+
+Its primary goal is to *prevent accidents and injuries* by triggering alerts or stopping the machine when unsafe conditions are detected.
+
+* Features
+
+- Real-time video monitoring of the molding machine workspace
+- Detection of human presence using computer vision techniques
+- Automatic safety responses:
+  - Alert systems (e.g., sound/light indicators)
+  - Integration with machine control to stop operation if needed
+- Configurable safety zones
+- Logging of incidents and system responses
+
+* Why It Matters
+
+Molding machines can pose significant safety hazards. This system helps:
+- Prevent human error from resulting in injury
+- Ensure compliance with workplace safety standards
+- Enhance trust and accountability on the factory floor
+
+* Technologies Used
+
+- Python
+- OpenCV (for image processing)
+- Raspberry Pi / Industrial PC (deployment)
