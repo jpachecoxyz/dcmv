@@ -1,33 +1,60 @@
-#+TITLE: Safety Vision System for Molding Machines (DCMV)
-#+AUTHOR: Javier Pacheco
-#+EMAIL: javier@jpacheco.xyz
+#+TITLE: Sistema de Monitoreo de Personas en Zonas de Riesgo
+#+AUTHOR: Ing. Javier Pacheco
+#+EMAIL: jpacheco@cock.li
+#+DATE: 2025-07-20
 #+OPTIONS: toc:nil
 
-* Project Overview
+* Descripción
 
-This project implements a *safety vision system* designed to protect operators working with or around industrial molding machines. The system continuously monitors the machine area and uses intelligent detection to identify the presence of people inside dangerous zones.
+Este proyecto es una aplicación en Python para el monitoreo en tiempo real de personas dentro del área operativa de una máquina industrial.
+Su propósito principal es mejorar la seguridad al detectar la presencia humana y activar un sistema de bloqueo que detenga la operación de
+la máquina mientras alguien se encuentre en una zona peligrosa.
+0
+* Características
 
-Its primary goal is to *prevent accidents and injuries* by triggering alerts or stopping the machine when unsafe conditions are detected.
+- Detección de personas en tiempo real utilizando OpenCV y modelos preentrenados.
+- Delimitación del área de inspección dentro del campo visual de la cámara.
+- Activación de una señal de bloqueo o paro (por GPIO, salida digital o relé).
+- Registro de eventos para análisis posterior.
+- Posible integración con sistemas de seguridad industrial existentes (PLC, SCADA, etc.).
 
-* Features
+* Dependencias
 
-- Real-time video monitoring of the molding machine workspace
-- Detection of human presence using computer vision techniques
-- Automatic safety responses:
-  - Alert systems (e.g., sound/light indicators)
-  - Integration with machine control to stop operation if needed
-- Configurable safety zones
-- Logging of incidents and system responses
+El proyecto requiere Python 3.12+ y las siguientes librerías:
 
-* Why It Matters
+- opencv-python
+- numpy
+- imutils
+- ultralytics
+- RPi.GPIO o similar, si se ejecuta en una Raspberry Pi o hardware con GPIO.
 
-Molding machines can pose significant safety hazards. This system helps:
-- Prevent human error from resulting in injury
-- Ensure compliance with workplace safety standards
-- Enhance trust and accountability on the factory floor
+* Uso
 
-* Technologies Used
+1. Conecta una cámara al sistema (puede ser USB o IP).
+2. Ejecuta el script principal:
 
-- Python
-- OpenCV (for image processing)
-- Raspberry Pi / Industrial PC (deployment)
+#+begin_src sh
+python main.py
+#+end_src
+
+4. La cámara comenzará a detectar personas. Si una persona entra en el área definida, se activará la salida de bloqueo.
+
+* Posibles mejoras
+
+- Detección de EPP (equipo de protección personal).
+- Interfaz gráfica para definir zonas de riesgo.
+- Entrenamiento personalizado para entornos específicos.
+- Exportación de métricas a Excel o dashboards en tiempo real.
+
+* Seguridad y advertencias
+
+Esta herramienta es auxiliar y no debe reemplazar los sistemas certificados de seguridad industrial.
+Toda integración debe ser validada por el área de ingeniería o mantenimiento.
+
+* Licencia
+
+Software desarrollado por Javier Pacheco. Puede ser usado y modificado bajo los términos de la licencia MIT.
+
+* Contacto
+
+Si tienes dudas, sugerencias o deseas contribuir, puedes escribirme a: [[mailto:jpacheco@cock.li][jpacheco@cock.li]].

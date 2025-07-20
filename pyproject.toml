@@ -1,16 +1,13 @@
 [project]
-name = "dcmv"
+name = "lc"
 version = "0.1.0"
-description = "A safety vision system to protect peope inside molding machines"
-readme = "README.org"
+description = "Add your description here"
+readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-	# "ultralytics",
-	"opencv-python",
-
-]
-
-[tool.uv.workspace]
-members = [
-	"dcmv",
-]
+    "opencv-python",
+    "numpy",
+    "imutils",
+    "ultralytics",
+    # "RPi.GPIO"
+    ]
